@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 // Import các module từ ứng dụng của bạn
@@ -17,6 +17,9 @@ import { AuthenticationModule } from '@feature/authentication/authentication.mod
 // Import các module từ bên ngoài
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+// Import Service
+import { HttpInterceptorService } from '@shared/helper/http-interceptor.service';
 
 export function createTranslateLoader(http: HttpClient) {
 	return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -42,7 +45,14 @@ export function createTranslateLoader(http: HttpClient) {
 		AuthenticationModule,
 		AdministrationModule,
 	],
-	providers: [TranslateService],
+	providers: [
+		TranslateService,
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: HttpInterceptorService,
+			multi: true,
+		},
+	],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}
