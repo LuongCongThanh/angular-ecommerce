@@ -1,0 +1,47 @@
+.txt-pre-warp {
+	white-space: pre-wrap;
+}
+.txt-left {
+	text-align: left;
+}
+.txt-right {
+	text-align: right;
+}
+.txt-center {
+	text-align: center;
+}
+.no-wrap {
+	white-space: nowrap;
+}
+.txt-uppercase {
+	text-transform: uppercase;
+}
+.txt-capitalize {
+	text-transform: capitalize;
+}
+.txt-underline {
+	text-decoration: underline;
+}
+.txt-flex-ellipsis {
+	flex: 1;
+	min-width: 0;
+}
+.txt-ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+// Text weight
+@each $name, $weight in $font-weight {
+	.txt-#{$name} {
+		font-weight: $weight;
+	}
+}
+
+// Text size
+@each $name, $size in $font-size {
+	.txt-#{$name} {
+		font-size: $size;
+	}
+}

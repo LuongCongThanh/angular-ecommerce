@@ -1,0 +1,68 @@
+.img {
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	// Image with loader
+	&.img-loader {
+		width: initial;
+		height: initial;
+		overflow: hidden;
+
+		.img-content {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+
+		.img-loading {
+			background: linear-gradient(-45deg, #cccccc, #ffffff, #d9d9d9);
+			background-size: 400% 400%;
+			animation: gradient 5s ease infinite;
+
+			img {
+				visibility: hidden;
+			}
+		}
+	}
+
+	// Image special size
+	&.img-sm {
+		// @include pxRem(width, 24);
+		// @include pxRem(height, 24);
+		width: 24px;
+		height: 24px;
+	}
+	&.img-xs {
+		// @include pxRem(width, 16);
+		// @include pxRem(height, 16);
+		width: 16px;
+		height: 16px;
+	}
+
+	.img-1x1 {
+		position: relative;
+		width: 100%;
+		padding-bottom: 100%;
+	}
+	.img-30x19 {
+		position: relative;
+		width: 100%;
+		padding-bottom: calc(100% * 19 / 30);
+	}
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

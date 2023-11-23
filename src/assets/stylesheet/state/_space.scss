@@ -1,0 +1,64 @@
+$value: 8;
+$sizeList: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+
+// Padding
+@each $size in $sizeList {
+	.pd-#{$size} {
+		padding: $value * $size + px;
+	}
+	.px-#{$size} {
+		padding: 0 $value * $size + px;
+	}
+	.py-#{$size} {
+		padding: $value * $size + px 0;
+	}
+	.pl-#{$size} {
+		padding-left: $value * $size + px;
+	}
+	.pl-#{$size}-i {
+		padding-left: $value * $size + px !important;
+	}
+	.pr-#{$size} {
+		padding-right: $value * $size + px;
+	}
+	.pt-#{$size} {
+		padding-top: $value * $size + px;
+	}
+	.pb-#{$size} {
+		padding-bottom: $value * $size + px;
+	}
+	.mg-#{$size} {
+		margin: $value * $size + px;
+	}
+	.mx-#{$size} {
+		margin: 0 $value * $size + px;
+	}
+	.my-#{$size} {
+		margin: $value * $size + px 0;
+	}
+	.mt-#{$size} {
+		margin-top: $value * $size + px;
+	}
+	.ml-#{$size} {
+		margin-left: $value * $size + px;
+	}
+	.mb-#{$size} {
+		margin-bottom: $value * $size + px;
+	}
+	.mr-#{$size} {
+		margin-right: $value * $size + px;
+	}
+}
+
+.mt-05 {
+	margin-top: 4px;
+}
+.ml-05 {
+	margin-left: 4px;
+}
+.mb-05 {
+	margin-bottom: 4px;
+}
+.pl-05 {
+	padding-left: 4px;
+}

@@ -1,0 +1,16 @@
+.icon {
+	font-size: 16px;
+	display: inline-flex;
+	align-self: center;
+
+	svg {
+		width: 1em;
+		height: 1em;
+	}
+
+	&.icon-w-auto {
+		svg {
+			width: auto;
+		}
+	}
+}

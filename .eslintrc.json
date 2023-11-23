@@ -1,0 +1,109 @@
+{
+	"root": true,
+	"ignorePatterns": [
+		"node_modules/",
+		"doc/",
+		"build/",
+		".angular/",
+		"src/environments/",
+		"src/.scannerwork/",
+		"src/main.ts",
+		"src/app/_api_generated_",
+		"**/*.spec.ts",
+		"**/*.scss",
+		"**/*.css"
+	],
+	"overrides": [
+		{
+			"files": ["*.ts"],
+			"extends": [
+				"eslint:recommended",
+				"plugin:@typescript-eslint/recommended",
+				"plugin:@angular-eslint/recommended",
+				"plugin:@angular-eslint/template/process-inline-templates"
+			],
+			"parser": "@typescript-eslint/parser",
+			"parserOptions": {
+				"project": ["./tsconfig.app.json", "tsconfig.json"],
+				"ecmaVersion": 2022,
+				"sourceType": "module"
+			},
+			"plugins": ["@typescript-eslint", "@angular-eslint", "unused-imports"],
+			"rules": {
+				"@angular-eslint/directive-selector": "off",
+				"@angular-eslint/no-lifecycle-call": "error",
+				"@angular-eslint/use-lifecycle-interface": "error",
+				"@angular-eslint/component-selector": [
+					"error",
+					{
+						"type": "element",
+						"prefix": "app",
+						"style": "kebab-case"
+					}
+				],
+				"@angular-eslint/component-class-suffix": [
+					"error",
+					{
+						"suffixes": ["Component", "View"]
+					}
+				],
+				"@angular-eslint/no-empty-lifecycle-method": "error",
+				"@angular-eslint/no-output-on-prefix": ["error"],
+				"@typescript-eslint/no-inferrable-types": "warn",
+				"@typescript-eslint/no-empty-function": [
+					"error",
+					{
+						"allow": ["constructors"]
+					}
+				],
+				"no-empty-function": [
+					"warn",
+					{
+						"allow": ["constructors"]
+					}
+				],
+				"no-underscore-dangle": "off",
+				"comma-dangle": [
+					"error",
+					{
+						"arrays": "only-multiline",
+						"objects": "only-multiline",
+						"imports": "never",
+						"exports": "never",
+						"functions": "only-multiline"
+					}
+				],
+				"typescript-eslint/quotes": "off",
+				"quotes": "off",
+				"max-len": [
+					"warn",
+					{
+						"code": 140
+					}
+				],
+				"eol-last": ["error"],
+				"no-console": "warn",
+				"no-mixed-spaces-and-tabs": ["warn", "smart-tabs"],
+				"unused-imports/no-unused-imports-ts": "error",
+				"linebreak-style": ["off"],
+				"semi": ["error"],
+				"prefer-const": "warn",
+				"no-useless-escape": "warn",
+				"no-unused-vars": "error",
+				"@typescript-eslint/no-unused-vars": ["error"],
+				"@typescript-eslint/no-explicit-any": "warn"
+			}
+		},
+		{
+			"files": ["*.component.html", "*.html"],
+			"parser": "@angular-eslint/template-parser",
+			"extends": ["plugin:@angular-eslint/template/recommended", "plugin:@typescript-eslint/recommended", "prettier"],
+			"parserOptions": {
+				"project": ["./tsconfig.app.json", "tsconfig.json"],
+				"ecmaVersion": 2022,
+				"sourceType": "module"
+			},
+			"plugins": ["@angular-eslint/template"]
+		}
+	]
+}

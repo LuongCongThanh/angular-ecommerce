@@ -1,0 +1,38 @@
+// == Breakpoints ===
+$breakpoints: (
+	small: 560px,
+	medium: 768px,
+	wide: 960px,
+	large: 1024px,
+	largest: 1280px,
+	super-largest: 1440px,
+);
+
+//https://htmlcolorcodes.com/color-names/
+$color: (
+	primary: #004098,
+	primary-light: #e5f0ff,
+	primary-dark: #0074c9,
+);
+
+$font-size: (
+	xs: 12px,
+	sm: 14px,
+	normal: 16px,
+	lg: 18px,
+	xl: 20px,
+	xxl: 24px,
+	xxxl: 32px,
+);
+
+$font-weight: (
+	thin: 300,
+	normal: 400,
+	medium: 500,
+	bold: 600,
+);
+
+$font-body: san-serif;
+
+$header-height: 60px;
+$footer-height: 80px;

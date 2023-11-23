@@ -1,0 +1,118 @@
+button {
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+	border: none;
+	outline: 0;
+	background-color: transparent;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+
+	&:disabled {
+		cursor: not-allowed !important;
+	}
+}
+
+%btn-active {
+	&:active {
+		transform: scale(0.95);
+	}
+}
+
+.btn {
+	@extend .txt-button;
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 32px;
+	height: 32px;
+	padding: 0 6px;
+	border-radius: 5px;
+	background-color: transparent;
+	border: 1px solid transparent;
+	font-family: $font-body;
+	cursor: pointer;
+	transition: all 0.2s ease;
+
+	&.btn-no-border {
+		border: 0;
+	}
+
+	@mixin btn-color($btn-color) {
+		background-color: transparent;
+		color: map-get($color, $btn-color);
+		border-color: map-get($color, $btn-color);
+
+		&:hover {
+			opacity: 0.75;
+		}
+		@extend %btn-active;
+	}
+
+	&-default {
+		@include btn-color(text);
+		border-color: map-get($color, border);
+	}
+
+	&-wanning {
+		@include btn-color(error);
+		border-color: map-get($color, error);
+	}
+
+	&-primary {
+		@include btn-color(primary);
+	}
+
+	&-flat-primary {
+		color: map-get($color, white);
+		background-color: map-get($color, primary);
+
+		&:hover {
+			opacity: 0.75;
+		}
+		@extend %btn-active;
+	}
+
+	// button icon
+	&-icon {
+		height: 100%;
+		min-height: 20px;
+		min-width: 20px;
+		padding: 0;
+
+		&:hover {
+			opacity: 0.75;
+		}
+		@extend %btn-active;
+	}
+
+	&-link {
+		color: map-get($color, primary);
+		text-decoration: underline;
+		font-size: 14px;
+	}
+
+	&-full-width {
+		width: 100%;
+	}
+
+	&-vw-lg {
+		padding: 1rem;
+		height: 3rem;
+	}
+
+	// Responsive 1024
+	@include respond-above(large) {
+		height: 35px;
+		min-width: 124px;
+		padding: 0 14px;
+
+		&-icon {
+			min-height: 20px;
+			min-width: 20px;
+			padding: 0;
+		}
+	}
+}

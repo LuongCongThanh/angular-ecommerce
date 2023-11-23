@@ -1,0 +1,15 @@
+@each $name, $type in $color {
+	.color-#{'' + $name} {
+		color: $type;
+	}
+}
+
+@each $name, $type in $color {
+	.bg-#{'' + $name} {
+		background-color: $type;
+	}
+}
+
+.txt-disable {
+	color: map-get($color, border);
+}
