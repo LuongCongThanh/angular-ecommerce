@@ -19,7 +19,7 @@ import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-transla
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 // Import Service
-import { HttpInterceptorService } from '@shared/helper/http-interceptor.service';
+import { HttpInterceptorService } from '@shared/service/http-interceptor.service';
 
 export function createTranslateLoader(http: HttpClient) {
 	return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
