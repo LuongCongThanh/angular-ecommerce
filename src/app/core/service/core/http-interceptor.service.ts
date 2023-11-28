@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse, HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { HttpHeadersService } from '@shared/service/httpHeader.service';
+import { HttpHeadersService } from '@core/service/core/httpHeader.service';
 
 @Injectable()
 export class HttpInterceptorService implements HttpInterceptor {

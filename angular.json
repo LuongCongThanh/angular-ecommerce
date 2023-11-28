@@ -28,7 +28,7 @@
 							"src/assets/styleSheet/styles.scss"
 						],
 						"stylePreprocessorOptions": {
-							"includePaths": ["src/assets/theme/base", "src/assets/theme/module", "src/assets/theme/state"]
+							"includePaths": ["src/assets/stylesheet/base", "src/assets/stylesheet/module", "src/assets/stylesheet/state"]
 						},
 						"scripts": []
 					},

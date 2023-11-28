@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { HeaderPair, HttpHeadersService } from '@shared/service/httpHeader.service';
+import { HeaderPair, HttpHeadersService } from '@core/service/core/httpHeader.service';
 import { catchError } from 'rxjs/operators';
 
 @Injectable({

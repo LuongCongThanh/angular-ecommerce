@@ -52,7 +52,7 @@ button {
 	}
 
 	&-default {
-		@include btn-color(text);
+		@include btn-color(primary);
 		border-color: map-get($color, border);
 	}
 
