@@ -20,6 +20,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 // Import Service
 import { HttpInterceptorService } from '@core/service/core/http-interceptor.service';
+import { ComponentsCommonModule } from '@shared/components-common/components-common.module';
 
 export function createTranslateLoader(http: HttpClient) {
 	return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -44,6 +45,7 @@ export function createTranslateLoader(http: HttpClient) {
 		LayoutModule,
 		AuthenticationModule,
 		AdministrationModule,
+		ComponentsCommonModule,
 	],
 	providers: [
 		TranslateService,
