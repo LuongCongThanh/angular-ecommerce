@@ -10,9 +10,11 @@ import { TranslateModule } from '@ngx-translate/core';
 import { PrimaryLayoutComponent } from './primary-layout/primary-layout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 @NgModule({
-	imports: [CommonModule, RouterModule, TranslateModule, FormsModule],
+	imports: [CommonModule, RouterModule, TranslateModule, FormsModule, NzDropDownModule, NzIconModule],
 	exports: [],
 	providers: [LayoutService],
 	declarations: [MainLayoutComponent, PrimaryLayoutComponent, HeaderComponent, FooterComponent],

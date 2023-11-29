@@ -1,0 +1,25 @@
+@import 'mixins';
+@import 'variables';
+
+.header {
+	width: 100%;
+	@include flex(space-between, center);
+	@include pxRem(height, 80);
+	@include pxRem(padding, 16);
+
+	&-menu {
+		&-list {
+			@include flex(center, center);
+
+			&-item {
+				color: map-get($color, accent-color);
+				cursor: pointer;
+				text-transform: uppercase;
+
+				&:hover {
+					color: map-get($color, primary-color);
+				}
+			}
+		}
+	}
+}

@@ -1,3 +1,37 @@
-<p>header works!</p>
-{{ 'HEADER.TITLE' | translate }}
-<p-inputSwitch [(ngModel)]="isEnglish" (onChange)="toggleLanguage()"></p-inputSwitch>
+<header class="header">
+	<div class="header-logo"></div>
+	<nav class="header-menu">
+		<ul class="header-menu-list">
+			<li class="header-menu-list-item pr-1">Home</li>
+			<li class="header-menu-list-item pr-1">Home</li>
+			<li class="header-menu-list-item pr-1">Home</li>
+			<li class="header-menu-list-item pr-1">Home</li>
+			<li class="header-menu-list-item pr-1">Home</li>
+			<li class="header-menu-list-item pr-1">Home</li>
+			<li class="header-menu-list-item pr-1">Home</li>
+			<li (nzVisibleChange)="change($event)" [nzDropdownMenu]="menu" class="header-menu-list-item" nz-dropdown>
+				menu
+				<i class="fa-solid fa-caret-down"></i>
+			</li>
+			<nz-dropdown-menu #menu="nzDropdownMenu">
+				<ul nz-menu>
+					<li nz-menu-item>1st menu item</li>
+					<li nz-menu-item>2nd menu item</li>
+					<li nz-submenu nzTitle="sub menu">
+						<ul>
+							<li nz-menu-item>3rd menu item</li>
+							<li nz-menu-item>4th menu item</li>
+						</ul>
+					</li>
+					<li nz-submenu nzDisabled nzTitle="disabled sub menu">
+						<ul>
+							<li nz-menu-item>3rd menu item</li>
+							<li nz-menu-item>4th menu item</li>
+						</ul>
+					</li>
+				</ul>
+			</nz-dropdown-menu>
+		</ul>
+		<div class="header-menu-icon"></div>
+	</nav>
+</header>

@@ -15,12 +15,13 @@ import { AdministrationModule } from '@feature/administration/administration.mod
 import { AuthenticationModule } from '@feature/authentication/authentication.module';
 
 // Import các module từ bên ngoài
-import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 // Import Service
 import { HttpInterceptorService } from '@core/service/core/http-interceptor.service';
 import { ComponentsCommonModule } from '@shared/components-common/components-common.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 export function createTranslateLoader(http: HttpClient) {
 	return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -46,6 +47,7 @@ export function createTranslateLoader(http: HttpClient) {
 		AuthenticationModule,
 		AdministrationModule,
 		ComponentsCommonModule,
+		FontAwesomeModule,
 	],
 	providers: [
 		TranslateService,
