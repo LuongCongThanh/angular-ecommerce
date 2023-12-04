@@ -14,7 +14,7 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 
 @NgModule({
-	imports: [CommonModule, RouterModule, TranslateModule, FormsModule, NzDropDownModule, NzIconModule],
+	imports: [CommonModule, RouterModule, TranslateModule, FormsModule, NzDropDownModule, NzIconModule.forChild([])],
 	exports: [],
 	providers: [LayoutService],
 	declarations: [MainLayoutComponent, PrimaryLayoutComponent, HeaderComponent, FooterComponent],

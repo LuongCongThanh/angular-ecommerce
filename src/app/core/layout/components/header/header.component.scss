@@ -8,18 +8,22 @@
 	@include pxRem(padding, 16);
 
 	&-menu {
+    @include flex(unset, unset);
 		&-list {
 			@include flex(center, center);
 
 			&-item {
-				color: map-get($color, accent-color);
+				color: map-get($color, accent);
 				cursor: pointer;
 				text-transform: uppercase;
 
 				&:hover {
-					color: map-get($color, primary-color);
+					color: map-get($color, primary);
 				}
 			}
 		}
+    &-icon{
+      @include flex(unset, unset);
+    }
 	}
 }

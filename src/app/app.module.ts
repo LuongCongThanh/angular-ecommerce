@@ -22,10 +22,18 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpInterceptorService } from '@core/service/core/http-interceptor.service';
 import { ComponentsCommonModule } from '@shared/components-common/components-common.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { IconDefinition } from '@ant-design/icons-angular';
+
+import * as AllIcons from '@ant-design/icons-angular/icons';
+import { NZ_ICONS } from 'ng-zorro-antd/icon';
 
 export function createTranslateLoader(http: HttpClient) {
 	return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 }
+const antDesignIcons = AllIcons as {
+  [key: string]: IconDefinition;
+};
+const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key])
 
 @NgModule({
 	declarations: [AppComponent],
@@ -56,6 +64,7 @@ export function createTranslateLoader(http: HttpClient) {
 			useClass: HttpInterceptorService,
 			multi: true,
 		},
+    { provide: NZ_ICONS, useValue: icons }
 	],
 	bootstrap: [AppComponent],
 })
