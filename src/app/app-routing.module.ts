@@ -4,9 +4,9 @@ import { MainLayoutComponent } from '@layout/main-layout/main-layout.component';
 import { PrimaryLayoutComponent } from '@layout/primary-layout/primary-layout.component';
 
 const routes: Routes = [
-	{ path: '', redirectTo: 'admin', pathMatch: 'full' },
+	{ path: '', redirectTo: '', pathMatch: 'full' },
 	{
-		path: 'auth',
+		path: '',
 		component: PrimaryLayoutComponent,
 		loadChildren: () => import('./feature/authentication/authentication.module').then(m => m.AuthenticationModule),
 	},
